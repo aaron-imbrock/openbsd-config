@@ -1,0 +1,26 @@
+#!/usr/bin/env sh
+
+echo "Local IP Addresses
+"
+if command -v ifconfig &>/dev/null; then
+    ifconfig | grep inet | grep -v inet6
+else
+    ip a | grep inet | grep -v inet6
+fi 
+
+echo "
+package:    Debian  |   Arch        | BSD           | RedHat
+            netcat  |   gnu-netcat  | built-in (nc) | nc
+binary:     ?       |   netcat      | nc            | ?   
+"
+
+echo "Syntax: nc [options] [hostname] [port]
+
+Receive:
+
+$ nc -lv 1234 > filename.out
+
+Send:
+
+$ nc -p 1234 -w 5 192.168.0.5 < filename.in
+"
