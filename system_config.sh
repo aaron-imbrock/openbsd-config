@@ -27,6 +27,14 @@ chown aimbrock:aimbrock /home/aimbrock/.xsession
 echo "TODO: Under Window Manager Tweaks"
 echo "[x] Hide title of windows when maximized"
 
-echo "Add config example for wifi that can be copied 
+echo """
+
+WIFI CONFIG EXAMPLE
+
+doas echo "join wifiname wpakey password" >> /etc/hostname.<wificardname>
+doas echo "dhcp" >> /etc/hostname.<wificardname>
+doas sh /etc/netstart # to restart the network
+
+"""
 
 echo "Reboot system for changes to take affect"
